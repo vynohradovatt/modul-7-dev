@@ -14,6 +14,8 @@ public class HttpImageStatusCli {
         HttpStatusImageDownloader downloader = new HttpStatusImageDownloader();
         downloader.downloadStatusImage(code);
 
+        scanner.close();
+
     }
 
     public static void main(String[] args) throws IOException {

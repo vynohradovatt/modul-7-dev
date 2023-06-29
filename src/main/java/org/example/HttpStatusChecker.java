@@ -9,19 +9,16 @@ public class HttpStatusChecker {
 
     public String getStatusImage(int code) throws IOException {
 
-        String urlImg = "https://http.cat/" + code + ".jpg";
+        String urlImg = "https://http.cat/" + code + ".jpeg";
 
         HttpURLConnection connection = (HttpURLConnection) new URL(urlImg).openConnection();
 
         int responseCode = connection.getResponseCode();
 
         if (responseCode == HttpURLConnection.HTTP_NOT_FOUND) {
-
-            throw new FileNotFoundException("Image not found for status code: " + code);
-        } else {
-
-            return urlImg;
+            System.out.println("Image not found for status code: " + code);
         }
+        return urlImg;
     }
 
     public static void main(String[] args) throws Exception {

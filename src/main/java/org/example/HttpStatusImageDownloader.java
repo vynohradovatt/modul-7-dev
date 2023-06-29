@@ -15,7 +15,7 @@ public class HttpStatusImageDownloader {
         String urlImage = new HttpStatusChecker().getStatusImage(code);
 
         try (InputStream is = new URL(urlImage).openStream()) {
-            String path = "cats/" + code + ".img";
+            String path = "cats/" + code + ".jpeg";
 
             if (!new File(path).exists()) {
             Files.copy(is, Paths.get(path));
